@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f8f9fa;
@@ -30,4 +30,74 @@ body {
 .home {
   padding: 50px;
   text-align: center;
+}
+ */
+/* 1) Box sizing & safe viewport height */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body, #root { min-height: 100svh; }
+
+/* 2) Fluid type scale (mobile-first) */
+:root {
+  --font-body: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --size-base: clamp(14px, 1.2vw + 10px, 18px);
+  --radius: 12px;
+  --gap: clamp(12px, 1.2vw, 20px);
+}
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--size-base);
+  line-height: 1.5;
+  color: #111;
+}
+
+/* 3) App shell layout */
+.app-shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100svh;
+}
+
+/* 4) A responsive content container */
+.container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+  padding-block: 1rem 2rem;
+}
+
+/* 5) Media helpers (adjust spacing on larger screens) */
+@media (min-width: 768px) {
+  .container { padding-block: 2rem 3rem; }
+}
+
+/* 6) Media & long-content safety nets */
+img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
+table { width: 100%; overflow-x: auto; display: block; }
+pre, code { white-space: pre-wrap; word-break: break-word; }
+:where(p, h1, h2, h3, h4, h5, h6) { overflow-wrap: anywhere; }
+
+/* 7) Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: 0; top: -40px;
+  background: #000; color: #fff;
+  padding: .5rem .75rem; border-radius: 8px;
+  transition: top .2s;
+  z-index: 1000;
+}
+.skip-link:focus { top: 10px; }
+
+/* 8) Optional: basic header styling that wraps nicely */
+.site-header {
+  border-bottom: 1px solid #eee;
+}
+
+/* 9) Optional: utility grid you can reuse in pages */
+.responsive-grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
