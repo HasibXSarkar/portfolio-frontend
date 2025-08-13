@@ -1,0 +1,20 @@
+.cv-page{
+    padding: 2rem;
+  background: #1C6EA4;
+  color: #F6F1DE;
+  min-height: 100vh;
+}
+.cv-download-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #F6F1DE;
+  color: #2d3a4b;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+.cv-download-btn:hover {
+  background: #1a2230;
+}

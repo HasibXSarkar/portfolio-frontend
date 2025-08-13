@@ -1,0 +1,32 @@
+.skills-page {
+  padding: 2rem;
+  background: #1C6EA4;
+  color: #F6F1DE;
+  min-height: 100vh;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: stretch; /* Make all cards the same height */
+}
+
+.skill-card {
+  background: #f5f5f5;
+  color: #2d3a4b;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  box-shadow:0 4px 8px #F6F1DE;
+  width: 200px;           /* Fixed width for uniformity */
+  min-height: 120px;      /* Minimum height for consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+    transition: transform 0.2s;
+}
+.skill-card:hover {
+  transform: scale(1.1);
+}
