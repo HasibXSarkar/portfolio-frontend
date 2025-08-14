@@ -19,7 +19,7 @@ function Projects() {
           <div className="project-card" key={project.id}>
             <h3>{project.title}</h3>
             <img
-              src={project.image}
+              src={`/images/${project.image.split("_")[0]}.jpg`}
               alt={project.title}
               className="project-image"
             />
